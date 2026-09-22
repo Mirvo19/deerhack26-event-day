@@ -40,7 +40,6 @@ Environment Variables (all of the above; `SUPABASE_SERVICE_ROLE_KEY` and
   "version": 2,
   "builds": [{ "src": "app.py", "use": "@vercel/python" }],
   "routes": [
-    { "src": "/static/(.*)", "dest": "/static/$1" },
     { "src": "/(.*)", "dest": "/app.py" }
   ]
 }
@@ -49,7 +48,8 @@ Environment Variables (all of the above; `SUPABASE_SERVICE_ROLE_KEY` and
 Single-file backend: `app.py` at the repo root is the whole Flask app —
 it runs locally with `python app.py` and Vercel builds it straight from the
 root (no `api/` folder, no shim). Static assets and `templates/` live at the
-root next to it. No build step (vanilla HTML/CSS/JS).
+root next to it, and Flask serves `/static` itself — that is why `vercel.json`
+has a single catch-all route and no static bypass. No build step (vanilla HTML/CSS/JS).
 
 ## 4. Local dev
 
