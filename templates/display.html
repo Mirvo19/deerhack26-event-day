@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DeerHack Live — School Edition 2026</title>
+
+  <link rel="icon" type="image/svg+xml" href="/static/logo.svg" />
+  <link rel="stylesheet" href="/static/css/display.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/motion@10.16.2/dist/motion.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+
+  <div id="motif-layer" aria-hidden="true"></div>
+
+  <div id="stage">
+    <header class="topbar">
+      <div class="brand">
+        <img class="brand-mark" src="/static/logo.svg" alt="DeerHack logo" />
+        <div class="brand-text">
+          <div class="brand-name">DEERHACK</div>
+          <div class="brand-sub">school edition 2026</div>
+        </div>
+      </div>
+
+      <div class="head-right">
+        <div class="live-ind" id="live-ind" data-state="syncing" role="status" aria-live="polite">
+          <span class="live-tick" aria-hidden="true"></span>
+          <span class="live-word">Live</span>
+        </div>
+        <div class="clock" id="clock">--:--</div>
+      </div>
+    </header>
+
+    <main class="hero">
+      <aside class="timer" id="timer-card" data-state="idle">
+        <div class="kicker" id="timer-kicker">Hacking Period</div>
+        <div id="timer-digits">00:00:00</div>
+        <div id="timer-sub">standby</div>
+        <div class="timer-progress"><div id="timer-bar"></div></div>
+        <div class="timer-foot">
+          <span id="timer-duration">session —</span>
+          <span id="timer-ends"></span>
+        </div>
+      </aside>
+
+      <section class="announce" id="announce-card">
+        <div class="kicker"><span class="" aria-hidden="true"></span>Live announcement</div>
+
+        <h1 id="announcement-text">Welcome to DeerHack.</h1>
+        <div class="announce-foot">
+          <span class="venue-line"></span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="marquee-wrap">
+      <div class="marquee-head">
+        <span class="marquee-title">Teams</span>
+        <span id="team-count"></span>
+      </div>
+      <div class="marquee"><div class="marquee-track" id="marquee-track"></div></div>
+    </footer>
+  </div>
+
+  <div id="sound-gate">
+    <div>
+      <div style="text-align:center"><button id="sound-enable" type="button">Enable live sound</button></div>
+      <p>click once so update chimes can play on this screen</p>
+    </div>
+  </div>
+
+  <audio id="alert-audio" preload="auto"></audio>
+
+  <script>
+    window.__DH_CONFIG__ = {
+      supabaseUrl: "{{ supabase_url }}",
+      anonKey: "{{ anon_key }}"
+    };
+  </script>
+  <script src="/static/js/display.js"></script>
+</body>
+</html>

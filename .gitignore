@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+
+# local-only stuff, not part of the app
+brand guidelines/
+mottifs/

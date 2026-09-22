@@ -1,0 +1,28 @@
+:root {
+  --dh-black: #121212;
+  --dh-black-2: #1a1a1a;
+  --dh-black-3: #242424;
+  --dh-white: #ffffff;
+  --dh-accent: #58c6c3;
+  --dh-accent-deep: #3aa5a2;
+  --dh-accent-ink: #0c2b2a;
+  --dh-amber: #f5b942;
+  --dh-red: #ff4d4d;
+  --dh-muted: rgba(255, 255, 255, 0.62);
+  --dh-faint: rgba(255, 255, 255, 0.12);
+  --dh-line: rgba(255, 255, 255, 0.14);
+
+  --dh-font-display: "BBH Bartle", "Arial Black", sans-serif;
+  --dh-font-body: "Space Grotesk", "Segoe UI", sans-serif;
+  --dh-font-pixel: "Bitcount Single", monospace;
+
+  --dh-space-1: 8px;
+  --dh-space-2: 16px;
+  --dh-space-3: 24px;
+  --dh-space-4: 40px;
+  --dh-space-5: 64px;
+
+  --dh-radius: 18px;
+  --dh-timer-size: clamp(64px, 13vw, 210px);
+  --dh-banner-size: clamp(20px, 2vw, 34px);
+}

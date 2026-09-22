@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>DeerHack Live — Control</title>
+  <link rel="icon" type="image/svg+xml" href="/static/logo.svg" />
+  <link rel="stylesheet" href="/static/css/admin.css" />
+</head>
+<body>
+<div class="admin-shell">
+
+  <div class="admin-head">
+    <div class="login-brand">
+      <img src="/static/logo.svg" alt="DeerHack logo" />
+      <div>
+        <span class="badge">live control</span>
+        <h1>DeerHack Live Control</h1>
+        <p class="hint" id="whoami">signed in as {{ admin_email }}</p>
+      </div>
+    </div>
+    <div class="btn-row" style="margin:0">
+      <a class="btn ghost small" href="/" target="_blank" rel="noopener" style="text-decoration:none">View display</a>
+      <button class="ghost small" id="logout-btn">Sign out</button>
+    </div>
+  </div>
+
+  <section class="card" id="mod-announce">
+    <h2>1 · Announcement / hero text</h2>
+    <p class="hint">Pushed instantly to every display hero. 500 chars max — long text auto-fits on screen.</p>
+    <textarea id="ann-text" maxlength="500" placeholder="e.g. Go to Sagarmatha Hall for the opening ceremony"></textarea>
+    <div class="btn-row">
+      <button id="ann-push">Push live</button>
+      <button class="ghost" id="ann-reload">Reload history</button>
+    </div>
+    <div class="list" id="ann-history"></div>
+  </section>
+
+  <section class="card" id="mod-timer">
+    <h2>2 · Timer</h2>
+    <p class="hint">Server-authoritative: displays count down from the DB end-timestamp.</p>
+    <div class="row cols-3">
+      <div><label>Hours</label><input id="t-h" type="number" min="0" max="24" value="1" /></div>
+      <div><label>Minutes</label><input id="t-m" type="number" min="0" max="59" value="0" /></div>
+      <div><label>Seconds</label><input id="t-s" type="number" min="0" max="59" value="0" /></div>
+    </div>
+    <label>Session label</label>
+    <input id="t-label" type="text" maxlength="60" value="Hacking Period" />
+    <div class="btn-row">
+      <button id="timer-start">Start</button>
+      <button class="ghost" id="timer-pause">Pause</button>
+      <button class="ghost" id="timer-reset">Stop / Reset</button>
+      <button class="ghost" id="timer-set">Set (no start)</button>
+    </div>
+    <p class="hint" id="timer-state-line" style="margin-top:10px">—</p>
+  </section>
+
+  <section class="card" id="mod-teams">
+    <h2>3 · Team marquee</h2>
+    <p class="hint">Add / remove / reorder. Marquee updates live on displays.</p>
+    <div class="row cols-3">
+      <div><label>Name</label><input id="team-name" type="text" maxlength="80" placeholder="YakByte Collective" /></div>
+      <div><label>Tagline</label><input id="team-tag" type="text" maxlength="140" placeholder="AI attendance for rural schools" /></div>
+      <div><label>Track</label><input id="team-track" type="text" maxlength="40" placeholder="AI for Good" /></div>
+    </div>
+    <div class="btn-row"><button id="team-add">Add team</button></div>
+    <div class="list" id="team-list"></div>
+  </section>
+
+  <section class="card" id="mod-motifs">
+    <h2>4 · Motifs / branding</h2>
+    <p class="hint">SVG / PNG / JPG / WebP / GIF, ≤5MB. Active glyphs drift behind the display hero. The header logo + favicon always use the bundled brand logo.</p>
+    <div class="row cols-2">
+      <div><label>Name</label><input id="motif-name" type="text" maxlength="80" placeholder="Pixel deer corner" /></div>
+      <div><label>Image file</label><input id="motif-file" type="file" accept="image/*,.svg" /></div>
+    </div>
+    <div class="btn-row"><button id="motif-upload">Upload motif</button></div>
+    <div class="list" id="motif-list"></div>
+  </section>
+
+  <section class="card" id="mod-sounds">
+    <h2>5 · Alert sounds</h2>
+    <p class="hint">MP3 only, ≤5MB. Preview before setting active. The active chime plays on displays on every live change.</p>
+    <div class="row cols-2">
+      <div><label>Name</label><input id="sound-name" type="text" maxlength="80" placeholder="Soft chime" /></div>
+      <div><label>MP3 file</label><input id="sound-file" type="file" accept="audio/mpeg,.mp3" /></div>
+    </div>
+    <div class="btn-row"><button id="sound-upload">Upload MP3</button></div>
+    <div class="list" id="sound-list"></div>
+  </section>
+
+  <section class="card" id="mod-status">
+    <h2>6 · System status</h2>
+    <p class="hint">Last-write timestamps per table, plus a manual no-op refresh fallback.</p>
+    <div class="btn-row">
+      <button class="ghost" id="status-reload">Refresh status</button>
+      <button class="ghost" id="force-resync">Push no-op refresh (fallback)</button>
+    </div>
+    <div class="status-grid" id="status-grid"></div>
+  </section>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="/static/js/admin.js"></script>
+</body>
+</html>

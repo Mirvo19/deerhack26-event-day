@@ -1,0 +1,18 @@
+<svg width="64" height="128" viewBox="0 0 64 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0H16V16H0V0Z" fill="#58C6C3"/>
+<path d="M32 0H48V16H32V0Z" fill="#58C6C3"/>
+<path d="M16 16H32V32H16V16Z" fill="#58C6C3"/>
+<path d="M48 16H64V32H48V16Z" fill="#58C6C3"/>
+<path d="M0 32H16V48H0V32Z" fill="#58C6C3"/>
+<path d="M32 32H48V48H32V32Z" fill="#58C6C3"/>
+<path d="M16 48H32V64H16V48Z" fill="#58C6C3"/>
+<path d="M48 48H64V64H48V48Z" fill="#58C6C3"/>
+<path d="M0 64H16V80H0V64Z" fill="#58C6C3"/>
+<path d="M32 64H48V80H32V64Z" fill="#58C6C3"/>
+<path d="M16 80H32V96H16V80Z" fill="#58C6C3"/>
+<path d="M48 80H64V96H48V80Z" fill="#58C6C3"/>
+<path d="M0 96H16V112H0V96Z" fill="#58C6C3"/>
+<path d="M32 96H48V112H32V96Z" fill="#58C6C3"/>
+<path d="M16 112H32V128H16V112Z" fill="#58C6C3"/>
+<path d="M48 112H64V128H48V112Z" fill="#58C6C3"/>
+</svg>
