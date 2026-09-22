@@ -6,3 +6,5 @@ __pycache__/
 # local-only stuff, not part of the app
 brand guidelines/
 mottifs/
+
+SETUP.md

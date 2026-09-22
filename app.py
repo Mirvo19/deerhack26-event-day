@@ -1,6 +1,4 @@
-"""deerhack live backend. runs on vercel as a stateless function,
-so nothing lives in memory here — all real state is in supabase.
-auth is a signed cookie holding supabase tokens, re-checked every request."""
+"""deerhack live backend. runs on vercel as a stateless function"""
 import os
 import re
 import time
